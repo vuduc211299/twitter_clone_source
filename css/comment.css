@@ -1,0 +1,67 @@
+#pop-up{
+    display: none;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+}
+#form{
+    margin-top: 65px;
+    background-color: #fff;
+    width: 600px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #e6ecf0;
+}
+#head-form{
+    border-bottom: 1px solid #b2b2b2;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-content: center;
+}
+#body-form{
+    display: grid;
+    grid-template-columns: 10% 90%;
+}
+#image-gif-bar{
+    margin-top: 18px;
+    margin-bottom: 18px;
+    display: grid;
+    grid-template-columns: 10% 10% 10%;
+    justify-content: left;
+    align-content: center;
+}
+
+/* .pop-up-comment{
+    margin-top: 10px;
+    display: none;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+} */
+#form-comment{
+    background-color: #fff;
+    width: 600px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #e6ecf0;
+}
+#head-form-comment{
+    border-bottom: 1px solid #b2b2b2;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-content: center;
+}
+#body-form-comment{
+    display: grid;
+    grid-template-columns: 10% 90%;
+}
+#image-gif-bar-comment{
+    margin-top: 18px;
+    margin-bottom: 18px;
+    display: grid;
+    grid-template-columns: 10%;
+    justify-content: left;
+    align-content: center;
+}
