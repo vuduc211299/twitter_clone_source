@@ -10,7 +10,7 @@
                 $username = $row["UserName"];
                 $fullname = $row["FullName"];
                 echo "
-                <a href='#' style='text-decoration: none'>
+                <a href='../php/personalPage.php?username=$username' style='text-decoration: none'>
                 <div style='padding : 15px 5px;
                     display: grid;
                     grid-template-columns: 8% 60% 18%;
