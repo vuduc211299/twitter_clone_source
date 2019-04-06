@@ -68,7 +68,6 @@
             </div>
         </div>
 
-
         <header>
             <!-- _______NAVIGATION BAR_________ -->
             <div class="nav-bar">
@@ -77,7 +76,7 @@
                 <div class="nav-bar-icon"> <button class="btn"> <img  class = "nav-icon" src="..\icon\icons8-notification-40.png" alt=""> </button></div>
                 <div class="nav-bar-icon"> <button class="btn"> <img  class = "nav-icon" src="..\icon\icons8-speech-bubble-48.png" alt=""> </button></div>
                 <div id="search">
-                    <input id = "input-search" style="border:none; outline: none ; width: 100%"  type="text" placeholder="search">
+                    <input id = "input-search" style="background-color: #e6ecf0; border:none; outline: none ; width: 100%"  type="text" placeholder="search">
                 </div>
                 <div class="nav-bar-icon" id="profile"><span style="font-weight: bold; font-size: 20px"><?php echo $user['FullName'] ?></span><img style="border-radius: 50%; height: 30px; width: 30px" class = "nav-icon" src="../images/<?php echo $user["image_profile"] ?>" alt=""></div>
                 <div class="nav-bar-icon">

@@ -9,7 +9,12 @@
             $sql = "SELECT * FROM user WHERE UserName = '".$session."'";
             return mysqli_query($conn,$sql);
         }
-
+        public function getUser($UserID){
+            $conn = new mysqli('localhost','root','','social_network');
+            $sql = "SELECT * FROM user WHERE UserID = '$UserID' ";
+            $result = $conn->query($sql);
+            return $result;
+        }
         public function getUserName(){
             return $UserName;
         }

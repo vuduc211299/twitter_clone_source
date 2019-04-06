@@ -10,7 +10,13 @@
             $sql = "SELECT * FROM post ORDER BY POSTID DESC";
             return mysqli_query($conn,$sql);
         }
-
+        public function getPostByUserID($UserID){
+            $conn = new mysqli('localhost','root','','social_network');
+            $sql = "SELECT * FROM post WHERE UserID = '$UserID' ";
+            $result = $conn->query($sql);
+            $row = mysqli_fetch_array($result);
+            return $row;
+        }
         public function getUserByPost($UserID){
             $conn = new mysqli('localhost','root','','social_network');
             $sql = "SELECT * FROM user WHERE UserID = '$UserID' ";
@@ -28,8 +34,10 @@
             $conn = new mysqli('localhost','root','','social_network');
             $sql = "SELECT * FROM heart WHERE PostID = '$PostID' AND UserID = '$UserID' ";
             $result = mysqli_query($conn,$sql);
-            $row = mysqli_fetch_array($result);
-            return $row['LikeID'];
+            if($result->num_rows > 0){
+                return true;
+            }
+            return false;
         }
         public function checkNumberCommentByPost($PostID){
             $conn = new mysqli('localhost','root','','social_network');

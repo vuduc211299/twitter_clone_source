@@ -1,12 +1,4 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <script text="javascript" src="twitter_clone_source\js\index.js"></script>
-</head>
-
-</html>
-
 <?php
     $post = new PostController();
     $allpost = $post->getAllPost();
@@ -44,7 +36,12 @@
                              <!-- Reaction tweet -->
                              
                             <div id="interact-tweet">
-                                <div style="display:grid; grid-template-columns: 50% 50% ; align-content:center;cursor:pointer"><img  data-id="<?php echo $row_allpost['PostID'] . '.' .$user['UserID'] ?>" class="btn_like" src="<?php if($flag == ''){echo("/twitter_clone_source/icon/like-icon.png");} else{echo("/twitter_clone_source/icon/liked-icon.png");}?>" alt=""><span style="margin-left:7px;" id="LikeCount"><?php echo $likeCount ?></span></div>
+                                <div class="btn_like" style="display:grid; grid-template-columns: 50% 50% ; align-content:center;cursor:pointer">
+                                    <img  data-id="<?php echo $row_allpost['PostID'] . '.' .$user['UserID'] ?>" src="<?php if($flag == true){echo("/twitter_clone_source/icon/liked-icon.png");} else{echo("/twitter_clone_source/icon/like-icon.png");}?>" alt="">
+                                    <span id="likecount" style="margin-left:7px;">
+                                        <?php echo $likeCount ?>
+                                    </span>
+                                </div>
                                 <div class="comment-tweet" style="display:grid; grid-template-columns: 50% 50% ; align-content:center;cursor:pointer"><img class="btn_comment" src="/twitter_clone_source/icon/comment-icon.png" alt="">
                                     <span style="margin-left:7px;"><?php echo $post->checkNumberCommentByPost($row_allpost['PostID']) ?></span>
                                 </div>

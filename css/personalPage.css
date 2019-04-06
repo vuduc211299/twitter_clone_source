@@ -1,0 +1,31 @@
+#cover-photo{
+    height: 280px;
+    background-color: #4ab4f5;
+
+}
+main{
+    z-index: 2;
+}
+#nav-under-cover-photo{
+    
+    height: 60px;
+    display: grid;
+    align-content: center;
+    grid-template-columns: 25% 55% 20%;
+
+}
+#tweet-follow{
+    display : grid;
+    grid-template-columns: 12% 12% 12%;
+
+}
+#body-personal-page{
+    background-color: #e6ecf0;
+    height: 1000px;
+    display: grid;
+    grid-template-columns: 25% 45% 20%;
+    grid-column-gap: 1%;
+}
+#left-side-personal-page,#right-side-personal-page,#center-personal-page{    
+    margin-top: 10px;
+}

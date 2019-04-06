@@ -2,15 +2,16 @@
     include "../dbConfig/dbConfig.php";  
     if(isset($_GET['keyword'])){
         $keyword = $_GET['keyword'];
-        $sql = "SELECT UserName,FullName,image_profile FROM user WHERE locate('$keyword',FullName) > 0 OR locate('$keyword',UserName) > 0";
+        $sql = "SELECT UserName,FullName,image_profile,UserID FROM user WHERE locate('$keyword',FullName) > 0 OR locate('$keyword',UserName) > 0";
         $result = $conn->query($sql);
         if($result->num_rows > 0){
             while($row = mysqli_fetch_array($result)){
                 $profile = $row['image_profile'];
                 $username = $row["UserName"];
                 $fullname = $row["FullName"];
+                $UserID = $row['UserID'];
                 echo "
-                <a href='../php/personalPage.php?username=$username' style='text-decoration: none'>
+                <a href='../php/personalPage.php?UserID=$UserID' style='text-decoration: none'>
                 <div style='padding : 15px 5px;
                     display: grid;
                     grid-template-columns: 8% 60% 18%;
