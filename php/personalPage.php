@@ -2,15 +2,17 @@
     include "../dbConfig/dbConfig.php";
     include "../controller/PostController.php";
     include "../controller/UserController.php";
-    session_start();
+    include "../controller/common_function.php";
+    
     if(!isset($_SESSION['username'])){
         header("Location:login.php");
     }else{
-        $post = new PostController();
-        $allPost = $post->getPostByUserID($_GET['UserID']);
         $user_control = new UserController();
-        $user = mysqli_fetch_array($user_control->getUser($_GET['UserID']));
-        
+        $user_personalPage = mysqli_fetch_array($user_control->getUser($_GET['UserID'])); // user on personal page
+
+        $user_control_session = new UserController();  // user session
+        $user_session_row = $user_control_session->getCurrentUser($_SESSION['username']);
+        $user = mysqli_fetch_array($user_session_row);
     }
 ?>
 <!DOCTYPE html>
@@ -20,6 +22,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/personalPage.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/index.js"></script>
     <title>Twitter</title>
 </head>
 <body>
@@ -30,7 +35,7 @@
             <div id = "cover-photo">
                 
                 <div id="avatar-profile">
-                    <img style="border: 5px solid #fff; margin-top : 180px; margin-left: 60px;width: 200px ; height: 200px; border-radius: 50%;" src="..\images\<?php echo $user['image_profile'] ?>" alt="">
+                    <img style="border: 5px solid #fff; margin-top : 150px; margin-left: 60px;width: 200px ; height: 200px; border-radius: 50%;" src="..\images\<?php echo $user_personalPage['image_profile'] ?>" alt="">
                 </div>
                 
             </div>
@@ -62,7 +67,8 @@
 
             </div>
             <div id="center-personal-page">
-
+                <!-- TWEET ON NEWSFEED SIDE -->
+                <?php require "../php/blocks/post.php" ?>
             </div>
             <div id="right-side-personal-page">
 

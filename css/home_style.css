@@ -130,7 +130,7 @@ main{
 .btn{
     cursor: pointer;
     border: none;
-    background-color: rgb(230, 236, 240);
+    background-color: #fff;
     outline: none;
 }
 .btn-news-feed{

@@ -5,7 +5,6 @@
      *  check login
      * 
      */
-
     //check session
 
     if(!$_SESSION['username']){
@@ -17,9 +16,9 @@
         $pass = md5($pass);
         $result = $conn->query("SELECT * FROM user WHERE UserName ='$user' AND Password ='$pass'");
         if($result->num_rows >0){
+            $row_user = mysqli_fetch_array($result);
             $_SESSION['username'] = $user;
-            $row  = mysqli_fetch_array($result);
-            $_SESSION['userid'] = $row["UserID"];
+            $_SESSION['userid'] = $row_user["UserID"];
             header('Location:../php/index.php');
         }else{
             echo '<script>alert("login failed")</script>'; 

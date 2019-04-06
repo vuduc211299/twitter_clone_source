@@ -1,11 +1,15 @@
-
 <?php
     $post = new PostController();
-    $allpost = $post->getAllPost();
+    if(isset($_GET['UserID'])){ // posts are presented on user page
+        $allpost = $post->getPostByUserID($_GET['UserID']);
+       
+    }else{
+        $allpost = $post->getAllPost();  // posts are presented on home page
+       
+    }
     while ($row_allpost = mysqli_fetch_array($allpost)) {
     // flag to check whether user like post or unlike
-    $flag = $post->checkLikePost($row_allpost['PostID'],$user['UserID']);
-                            
+    $flag = $post->checkLikePost($row_allpost['PostID'],$user['UserID']);                       
     $likeCount = $post->getQuantityLikeByPost($row_allpost['PostID']);
 ?>
     <div class="post-newsfeed-side">
@@ -13,10 +17,10 @@
             $user_get = $post->getUserByPost($row_allpost['UserID']);
             $row_user = mysqli_fetch_array($user_get);
         ?>
-        <div id = "img-profile-tweet"><img style="border-radius: 50%; height: 40px; width: 40px" src="/twitter_clone_source/images/<?php echo $row_user['image_profile']?>" alt="img-profile"></div>
+        <div id = "img-profile-tweet"><a style=" text-decoration: none" href="/twitter_clone_source/php/personalPage.php?UserID=<?php echo $row_user['UserID'] ?>"><img style="border-radius: 50%; height: 40px; width: 40px" src="/twitter_clone_source/images/<?php echo $row_user['image_profile']?>" alt="img-profile"></a></div>
             <div style="width: 100% ;" id="tweet-content">
                     <div style="font-weight: bold; font-size: 20px"  id ="header-tweet">
-                        <span><?php echo $row_user['FullName'] ?></span>
+                        <span><a class="fullname" style="color: #000; text-decoration: none" href="/twitter_clone_source/php/personalPage.php?UserID=<?php echo $row_user['UserID'] ?>"><?php echo $row_user['FullName'] ?></a></span>
                         <span style="font-weight:500 ; font-size: 18px;color: grey ;font-family: Arial, Helvetica, sans-serif;  "><?php echo "@". $row_user['UserName'] ?></span>
                     </div>
                     
@@ -76,5 +80,5 @@
                     </div> 
                     
                 <?php
-                        }
+                    }
                 ?> 

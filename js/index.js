@@ -1,4 +1,16 @@
 $(document).ready(function(){
+    // location to home page
+    $("#home-page").click(function(){
+        location.replace("../php/index.php");
+    });
+    $(".fullname").hover(function(){
+        $(this).css("text-decoration","underline");
+        $(this).css("color","#1da1f2");    
+      },function(){
+        $(this).css("text-decoration","none");
+        $(this).css("color","#000");  
+      });
+
     // Like post 
     $(".btn_like").click(function(){
      

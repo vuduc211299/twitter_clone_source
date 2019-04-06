@@ -71,14 +71,14 @@
         <header>
             <!-- _______NAVIGATION BAR_________ -->
             <div class="nav-bar">
-                <div class="nav-bar-icon"> <button class="btn" id ="home-page"> <img  class = "nav-icon" src="..\icon\icons8-home-page-64.png" alt="">  </button></div>
-                <div class="nav-bar-icon"> <button class="btn"> <img  class = "nav-icon" src="..\icon\icons8-hashtag-large-40.png" alt=""> </button></div>
-                <div class="nav-bar-icon"> <button class="btn"> <img  class = "nav-icon" src="..\icon\icons8-notification-40.png" alt=""> </button></div>
-                <div class="nav-bar-icon"> <button class="btn"> <img  class = "nav-icon" src="..\icon\icons8-speech-bubble-48.png" alt=""> </button></div>
+                <div class="nav-bar-icon"> <button class="btn" id ="home-page"> <img  class = "nav-icon" src="..\icon\home_twitter.png" alt="">  </button></div>
+                <div class="nav-bar-icon"> <button class="btn"> <img  class = "nav-icon" src="..\icon\hastag_twitter.png" alt=""> </button></div>
+                <div class="nav-bar-icon"> <button class="btn"> <img  class = "nav-icon" src="..\icon\notify_twitter.png" alt=""> </button></div>
+                <div class="nav-bar-icon"> <button class="btn"> <img  class = "nav-icon" src="..\icon\message_twitter.png" alt=""> </button></div>
                 <div id="search">
                     <input id = "input-search" style="background-color: #e6ecf0; border:none; outline: none ; width: 100%"  type="text" placeholder="search">
                 </div>
-                <div class="nav-bar-icon" id="profile"><span style="font-weight: bold; font-size: 20px"><?php echo $user['FullName'] ?></span><img style="border-radius: 50%; height: 30px; width: 30px" class = "nav-icon" src="../images/<?php echo $user["image_profile"] ?>" alt=""></div>
+                <div class="nav-bar-icon" id="profile"><span style="font-weight: bold; font-size: 20px"><?php echo $user['FullName'] ?></span><a href="personalPage.php?UserID=<?php echo $user["UserID"] ?>"><img style="border-radius: 50%; height: 30px; width: 30px" class = "nav-icon" src="../images/<?php echo $user["image_profile"] ?>" alt=""></a></div>
                 <div class="nav-bar-icon">
                     <form action="../controller/common_function.php" method="post">
                         <div id="div-log-out" style="cursor:pointer; padding: 5px; border: 1px solid #1da1f2; background-color: #1da1f2 ; border-radius: 20px"><input style="cursor:pointer;outline:none; border:none; color:#fff; font-weight: bold;background-color: #1da1f2" type="submit" value="Log out" name="btn_logout" id="log_out"></div> 
@@ -99,7 +99,7 @@
                     </div>
                     <!--  TWEET new tweet -->
                         <div id="tweet-newsfeed-side">
-                                <div> <button class="btn-news-feed"> <img style="border-radius: 50%; height: 30px; width: 30px" src="../images/<?php echo $user["image_profile"] ?>" alt=""></button></div>
+                                <div> <button class="btn-news-feed"><a href="personalPage.php?UserID=<?php echo $user['UserID'] ?>"> <img style="border-radius: 50%; height: 30px; width: 30px" src="../images/<?php echo $user["image_profile"] ?>" alt=""></a>  </button></div>
                                 <div style="width:300px; background-color: #e6ecf0 ; cursor: pointer" id="tweet-bar">
                                     <input class="open-pop-up" id="tweet" style=" cursor: pointer; background-color: #e6ecf0;  border:none; outline: none ; width: 100%" type="text" placeholder="What's happening ?">
                                 </div>

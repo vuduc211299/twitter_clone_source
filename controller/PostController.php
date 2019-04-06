@@ -14,8 +14,7 @@
             $conn = new mysqli('localhost','root','','social_network');
             $sql = "SELECT * FROM post WHERE UserID = '$UserID' ";
             $result = $conn->query($sql);
-            $row = mysqli_fetch_array($result);
-            return $row;
+            return $result;
         }
         public function getUserByPost($UserID){
             $conn = new mysqli('localhost','root','','social_network');
