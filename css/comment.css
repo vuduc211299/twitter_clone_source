@@ -32,13 +32,7 @@
     align-content: center;
 }
 
-/* .pop-up-comment{
-    margin-top: 10px;
-    display: none;
-    justify-content: center;
-    position: fixed;
-    width: 100%;
-} */
+
 #form-comment{
     background-color: #fff;
     width: 600px;
@@ -64,4 +58,19 @@
     grid-template-columns: 10%;
     justify-content: left;
     align-content: center;
+}
+#txt-area-reply-to-tweet{
+    padding: 10px;
+    border-radius: 10px ;
+    resize:none; 
+    margin-top: 20px ;
+    background-color: #e6ecf0;  
+    border:none; 
+    outline: none;
+    height: 70px;
+}
+#wrap-txt-reply-to-tweet{
+    justify-content: center; 
+    display: grid;
+    padding-bottom: 5px;
 }

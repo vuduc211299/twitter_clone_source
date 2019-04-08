@@ -22,7 +22,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
+    <title>Home / Twitter</title>
     <link rel="stylesheet" href="..\css\home_style.css">
     <!-- bootstrap cdn -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -35,6 +35,7 @@
     <link rel="shortcut icon" href="../icon/icons8-twitter-96.png">
     <!-- font google -->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="../css/right-side.css">
 </head>
 <body> 
     <!-- Pop up tweet-->

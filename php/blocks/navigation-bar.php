@@ -8,7 +8,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <!-- javascript for home page -->
     <script text="javascript" src="/twitter_clone_source/js/index.js"></script>
-    <link rel="stylesheet" href="/twitter_clone_source/css/home_style.css">
+    <!-- font google -->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="/twitter_clone_source/css/home_style.css"> -->
     <style>
         header{
             width: 100%;

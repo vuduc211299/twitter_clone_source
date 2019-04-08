@@ -65,8 +65,8 @@
                                         </div>
                                         <div id="body-form-comment">
                                             <div style="justify-self: center; margin-top: 10px"><img style="border-radius: 50%; height: 30px; width: 30px" src="/twitter_clone_source/images/<?php echo $user['image_profile'] ?>" alt=""></div>
-                                                <div style="justify-content: center; display: grid; padding-bottom: 5px;">
-                                                    <textarea name = 'content-tweet-comment' style="padding: 10px;border-radius: 10px 10px 0px 0px ;resize:none; margin-top: 20px ; background-color: #e6ecf0;  border:none; outline: none ;" type="text" placeholder="Tweet your reply" rows="7" cols="70"></textarea>
+                                                <div id="wrap-txt-reply-to-tweet">
+                                                    <textarea name = 'content-tweet-comment' id="txt-area-reply-to-tweet"  type="text" placeholder="Tweet your reply"></textarea>
                                                     <!-- Preview Image -->
 
                                                 <div style="border-radius: 0px 0px 10px 10px ;width:528px ;height: auto; display: grid;  justify-content: center; align-content: center; background-color: #e6ecf0 ;" id = "image-holder-comment"></div>                

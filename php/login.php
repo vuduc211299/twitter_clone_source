@@ -27,8 +27,8 @@
         <div class="right-side">
             <div class="head-right-side">
                 <form action="../controller/common_function.php" method="post">         
-                    <div class="form-user"><input placeholder="username" style="outline:none ;border:none" type="text" name="username" id=""></div> 
-                    <div class="form-user"><input placeholder="password" style="outline:none ;border:none" type="password" name="pass" id=""></div> 
+                    <div class="form-user"><input id="username_input" placeholder="username" style="outline:none ;border:none" type="text" name="username" id=""></div> 
+                    <div class="form-user"><input id="password_input" placeholder="password" style="outline:none ;border:none" type="password" name="pass" id=""></div> 
                     <div class="btn_login" style="cursor:pointer"><input style="cursor:pointer;outline:none; border:none; color:#1da1f2; font-weight: bold;background-color: #fff" type="submit" value="Log in" name="btn_login"></div>  
                 </form>
             </div>
