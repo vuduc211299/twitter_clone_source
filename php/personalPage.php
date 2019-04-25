@@ -3,6 +3,8 @@
     include "../controller/PostController.php";
     include "../controller/UserController.php";
     include "../controller/common_function.php";
+    include "../controller/followController.php";
+    include "../controller/personalPageController.php";
     
     if(!isset($_SESSION['username'])){
         header("Location:login.php");
@@ -28,8 +30,10 @@
     <script src="../js/personalPage.js"></script>
     <link rel="shortcut icon" href="../icon/icons8-twitter-96.png">
     <script src="../js/index.js"></script>
+    <script src="../js/follow.js"></script>
     <link rel="stylesheet" href="../css/pop-up-edit-profile.css">
     <link rel="stylesheet" href="../css/home_style.css">
+    <link rel="stylesheet" href="../css/right-side.css">
     <title><?php echo($user_personalPage['FullName']. "(@". $user_personalPage['UserName']. ") / Twitter"); ?></title>
 </head>
 <body>
@@ -102,16 +106,16 @@
                 </div>
                 <div id="tweet-follow">
                     <div style="text-align: center">
-                        <span>Tweets</span><br/>
-                        <span>12</span>
+                        <span style="color: grey">Tweets</span><br/>
+                        <span style="font-weight: bolder"><?php echo getNumberTweets($user_personalPage['UserID']) ?></span>
                     </div>
                     <div style="text-align: center">
-                        <span>Following</span><br/>
-                        <span>12</span>
+                        <span style="color: grey">Following</span><br/>
+                        <span style="font-weight: bolder"><?php echo getFollowing($user_personalPage['UserID']) ?></span>
                     </div>
                     <div style="text-align: center">
-                        <span>Followers</span><br/>
-                        <span>12</span>
+                        <span style="color: grey">Followers</span><br/>
+                        <span style="font-weight: bolder"><?php echo getFollowers($user_personalPage['UserID']) ?></span>
                     </div>
                 </div>
                 <?php 
@@ -124,7 +128,26 @@
                 <?php
                     if($_SESSION["username"]!==$user_personalPage['UserName']){
                 ?>
-                    <button id="follow-unfollow" style="justify-self: center;cursor:pointer;outline:none; border: 2px solid #1da1f2; border-radius: 20px; width: 120px; color:#fff; font-weight: bold;background-color: #1da1f2" >Follow</button>
+                    <div data-id= "<?php echo $user_personalPage['UserID'] . '.' .$user['UserID'] ?>" class="btn_follow" style="text-align: center;justify-self: center;cursor:pointer;outline:none; border: 2px solid #1da1f2; border-radius: 20px; width: 120px; color:#fff; font-weight: bold;background-color: #1da1f2" >
+                        <?php
+                            $follow_personal_page = new followController;
+                            $check_follow = $follow_personal_page->checkFollow($user['UserID'],$user_personalPage['UserID']);
+                            if( $check_follow == true){   
+                        ?>
+                            Following
+                        <?php
+                            }
+                        ?>
+                        <?php
+                            if($check_follow == false)
+                            {
+                        ?>
+                            Follow
+                        <?php
+                            }
+                        ?>
+
+                    </div>
                 <?php
                     }
                 ?>

@@ -2,6 +2,7 @@ $(document).ready(function(){
     // location to home page
     $("#home-page").click(function(){
         location.replace("../php/index.php");
+        
     });
     $(".fullname").hover(function(){
         $(this).css("text-decoration","underline");
@@ -140,4 +141,17 @@ $(document).ready(function(){
           $("#live-search").css("display","none");
         }
     });
+
+    $('.post-newsfeed-side').hover(
+      function(){
+        $(this).css('background-color','rgb(245,248,250)');
+      
+        
+    },
+      function(){
+        $(this).css('background-color','#fff');
+       
+       
+      }
+    )
 });

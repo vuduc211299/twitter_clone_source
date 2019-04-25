@@ -28,8 +28,7 @@
         $user_exists =  $conn->query($sql);
 
         if(!checkConfirmPassword($_POST['password'],$_POST['confirm-password']) || $user_exists->num_rows > 0){
-            echo "<script>alert('invalid input')</script>";
-            header("../php/registration.php");
+            header("Location:../php/registration.php?status=failed");
         }else{
             // upload image profile to path 
             move_uploaded_file($_FILES['image']['tmp_name'],$targetFileName);
@@ -42,10 +41,9 @@
                 $sql = "INSERT INTO user(UserName,Password,FullName,Birthday,image_profile,CreatedDate) VALUES ('$user','$pass','$fullname','$date','$filename',NOW())";
                 $result = $conn->query($sql);
                 if($result){
-                    echo "<script>alert('sign up successfully')</script>";
-                    header("../php/registration.php");
+                    header("Location:../php/registration.php?status=success");
                 }else{
-                    echo "<script>alert('sign up failed')</script>";
+                    header("Location:../php/registration.php?status=failed");
                 }
             }
         }

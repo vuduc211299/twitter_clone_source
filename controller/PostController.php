@@ -1,13 +1,13 @@
 <?php
     include "../dbConfig/dbConfig.php";
-
+    // include "followController.php";
 
     class PostController
     {
         
-        public function getAllPost(){
+        public function getAllPost($UserID){
             $conn = new mysqli('localhost','root','','social_network');
-            $sql = "SELECT * FROM post ORDER BY POSTID DESC";
+            $sql = "SELECT * FROM post WHERE UserID in (SELECT Follow_UserID FROM follow WHERE UserID = '$UserID') or UserID = '$UserID' ORDER BY POSTID DESC";
             return mysqli_query($conn,$sql);
         }
         public function getPostByUserID($UserID){

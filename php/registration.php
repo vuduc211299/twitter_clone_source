@@ -15,8 +15,29 @@
 </head>
 <body>
 <div class="container">
-
     <div class="card bg-light">
+            <?php   if(isset($_GET['status'])){
+                    if($_GET['status'] == 'failed'){
+            ?>  
+                <div id="status">
+                    <span style="color: red">Invalid Input , please fill out blank </span>
+                </div>
+            <?php
+                    }
+                    
+                }
+            ?>
+            <?php   if(isset($_GET['status'])){
+                    if($_GET['status'] == 'success'){
+            ?>  
+                <div id="status">
+                    <span style="color: green">Sign Up successfully</span>
+                </div>
+            <?php
+                    }
+                    
+                }
+            ?>
         <article class="card-body mx-auto" style="max-width: 400px;">
             <h4 class="card-title mt-3 text-center">Create Account</h4>
             <p class="text-center">Get started with your free account</p>

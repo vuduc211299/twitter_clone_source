@@ -20,7 +20,7 @@ main{
     background-color: #e6ecf0;
     height: auto;
     display: grid;
-    grid-template-columns: 25% 45% 20%;
+    grid-template-columns: 25% 45% 26%;
     grid-column-gap: 1%;
 }
 #left-side-personal-page,#right-side-personal-page,#center-personal-page{    

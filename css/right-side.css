@@ -7,21 +7,46 @@
 #right-side-profile{
     padding : 15px 5px;
     display: grid;
-    grid-template-columns: 8% 60% 18%;
+    grid-template-columns: 8% 60% 20%;
     grid-column-gap: 5%;
     align-content: center;
     border-bottom: 1px solid #e6ecf0;
 }
-#follow{
+
+.following{
+    cursor:pointer;
+    outline:none;
+    border:none; 
+    color:#fff; 
+    font-weight: bold;
+    background-color: #1da1f2;
+    border: 1px solid #1da1f2;
+    border-radius:20px; 
+    padding: 10px 0px;
+    text-align: center;
+    font-size: 15px;
+}
+.follow{
     cursor:pointer;
     outline:none;
     border:none; 
     color:#1da1f2; 
     font-weight: bold;
     background-color: #fff;
-}
-.btn_follow{
     border: 1px solid #1da1f2;
     border-radius:20px; 
+    padding: 10px;
+    text-align: center;
+}
+.unfollow{
+    cursor:pointer;
+    outline:none;
+    border:none; 
+    color:#fff; 
+    font-weight: bold;
+    background-color: rgb(126, 13, 13);
+    border: 1px solid rgb(126, 13, 13);
+    border-radius:20px; 
     padding: 8px;
+    text-align: center;
 }

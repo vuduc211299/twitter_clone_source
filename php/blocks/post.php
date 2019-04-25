@@ -4,7 +4,7 @@
         $allpost = $post->getPostByUserID($_GET['UserID']);
        
     }else{
-        $allpost = $post->getAllPost();  // posts are presented on home page
+        $allpost = $post->getAllPost($user['UserID']);  // posts are presented on home page
        
     }
     while ($row_allpost = mysqli_fetch_array($allpost)) {
@@ -25,23 +25,26 @@
                     </div>
                     
                     <div id ="content-tweet">
-                        <div id="content-tweet-text">
-                            <p style="width: 100%; line-height: 1.325">
-                                <?php
-                                    echo $row_allpost['PostContent'];
-                                ?>   
-                            </p>
-                                </div>
-                                <div id="content-tweet-img">
-                                    <img style="width:100%; height: 400px; border-radius:6%; border:0.5px solid #bbb" srcset="/twitter_clone_source/images/<?php echo $row_allpost['image_post'] ?>" alt="">
-                                </div>
+                        <a style=" text-decoration: none; color: #000" href="../php/postDetail.php?status=<?php echo $row_allpost['PostID'] ?> ">
+                            <div id="content-tweet-text">
+                                <p style="width: 100%; line-height: 1.325">
+                                    <?php
+                                        echo $row_allpost['PostContent'];
+                                    ?>   
+                                </p>
                             </div>
+                           
+                            <div id="content-tweet-img">
+                                <img style="width:100%; height: 400px; border-radius:6%; border:0.5px solid #bbb" srcset="/twitter_clone_source/images/<?php echo $row_allpost['image_post'] ?>" alt="">
+                            </div>
+                        </a>
+                    </div>
 
                              <!-- Reaction tweet -->
                              
                             <div id="interact-tweet">
                                 <div class="btn_like" style="display:grid; grid-template-columns: 50% 50% ; align-content:center;cursor:pointer">
-                                    <img  data-id="<?php echo $row_allpost['PostID'] . '.' .$user['UserID'] ?>" src="<?php if($flag == true){echo("/twitter_clone_source/icon/liked-icon.png");} else{echo("/twitter_clone_source/icon/like-icon.png");}?>" alt="">
+                                    <img data-id="<?php echo $row_allpost['PostID'] . '.' .$user['UserID'] ?>" src="<?php if($flag == true){echo("/twitter_clone_source/icon/liked-icon.png");} else{echo("/twitter_clone_source/icon/like-icon.png");}?>" alt="">
                                     <span id="likecount" style="margin-left:7px;">
                                         <?php echo $likeCount ?>
                                     </span>

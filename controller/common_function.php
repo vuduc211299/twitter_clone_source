@@ -32,8 +32,7 @@
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         $targetDir = '../images/';
         $filename = basename($_FILES['upload-img-post']['name']); // global
-        $targetFileName = $targetDir . $filename;  // path of file to uploads
-                            
+        $targetFileName = $targetDir . $filename;  // path of file to uploads                     
     }
     if(isset($_POST['post-tweet'])&&($_POST['post-tweet']=="tweet" )){
         move_uploaded_file($_FILES['upload-img-post']['tmp_name'],$targetFileName);

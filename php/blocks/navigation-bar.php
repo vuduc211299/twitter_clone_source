@@ -11,44 +11,8 @@
     <!-- font google -->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <!-- <link rel="stylesheet" href="/twitter_clone_source/css/home_style.css"> -->
-    <style>
-        header{
-            width: 100%;
-            z-index: 3;
-            position: fixed;
-            padding-top: 5px;
-            background-color:#fff;
-            margin-top: -10px;
-            font-family: 'PT Sans', sans-serif;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 6% 6% 6% 6% 35% 20% 10%;
-            height: 60px;
-            justify-items: center;
-            align-items: center;
-            justify-content: center;
-            font-family: 'PT Sans', sans-serif;
-            border-bottom: 1px solid #bbb;
-        }
-        #tweet-bar,#search{
-            width : 450px;
-            padding: 5px;
-            border: none;
-            border-radius: 20px;
-            border: 1.5px solid rgb(230, 236, 240);
-            background-color:  rgb(230, 236, 240);
-        }
-        #live-search{
-            margin-top: 47px;
-            width: 470px;
-            display: none;
-            position: fixed;
-            background-color: #fff;
-            height: auto;
-            justify-content: center;
-            margin-left: 400px;
-        }   
-    </style>
+    <link rel="stylesheet" href="../css/navbar.css">
+  
 </head>
 <body>
     <header>

@@ -22,4 +22,24 @@
         }
     }
 
+    function getFollowing($user_personal_page){
+        $conn = new mysqli('localhost','root','','social_network');
+        $sql = "SELECT * FROM follow WHERE UserID = '$user_personal_page' ";
+        $result = $conn->query($sql);
+        return $result->num_rows;
+    }
+
+    function getFollowers($user_personal_page){
+        $conn = new mysqli('localhost','root','','social_network');
+        $sql = "SELECT * FROM follow WHERE Follow_UserID = '$user_personal_page' ";
+        $result = $conn->query($sql);
+        return $result->num_rows;
+    }
+    function getNumberTweets($user_personal_page){
+        $conn = new mysqli('localhost','root','','social_network');
+        $sql = "SELECT * FROM post WHERE UserID = '$user_personal_page' ";
+        $result = $conn->query($sql);
+        return $result->num_rows;
+    }
+
 ?>
